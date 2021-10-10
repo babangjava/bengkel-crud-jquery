@@ -21,7 +21,6 @@
 	<spring:url value="/assets/css/bootstrap.min.css" var="boostrap"/>
 	<spring:url value="/assets/css/bootstrap-table.min.css" var="boostraptable"/>
 	<spring:url value="/assets/css/datepicker3.css" var="css_url_datepicker" />
-	<spring:url value="/assets/css/bootstrap-select.min.css" var="select_picker" />
 	<spring:url value="/assets/css/font-awesome.css" var="font" />
 	<spring:url value="/assets/css/custom-styles.css" var="style" />
 	<spring:url value="http://fonts.googleapis.com/css?family=Open+Sans" var="textStyle" />
@@ -29,21 +28,18 @@
 	<link href="${boostrap}" rel="stylesheet" type="text/css"/>
 	<link href="${css_url_datepicker}" rel="stylesheet" type="text/css"/>
 	<link href="${boostraptable}" rel="stylesheet" type="text/css"/>
-	<link href="${select_picker}" rel="stylesheet" type="text/css"/>
 	<link href="${font}" rel="stylesheet" type="text/css"/>
 	<link href="${style}" rel="stylesheet" type="text/css"/>
 	<link href="${textStyle}" rel="stylesheet" type="text/css"/>
 
 	<spring:url value="/assets/js/jquery-1.10.2.min.js" var="jquery" />
 	<spring:url value="/assets/js/bootstrap.js" var="boostrapjs" />
-	<spring:url value="/assets/js/bootstrap-select.min.js" var="selectjs" />
 	<spring:url value="/assets/js/bootstrap-table.min.js" var="boostraptablejs" />
 	<spring:url value="/assets/js/bootstrap-datepicker.js" var="js_url_bootstrap_datepicker" />
 	<spring:url value="/assets/js/locales/bootstrap-datepicker.${fn:substring(plocale, 0, 2)}.js" var="js_url_bootstrap_datepicker_locale" />
 
 	<script type="text/javascript" src="${jquery}"><jsp:text/></script>
 	<script type="text/javascript" src="${boostrapjs}"><jsp:text/></script>
-	<script type="text/javascript" src="${selectjs}"><jsp:text/></script>
 	<script type="text/javascript" src="${boostraptablejs}"><jsp:text/></script>
 	<script type="text/javascript" src="${js_url_bootstrap_datepicker}"><jsp:text/></script>
 	<script type="text/javascript" src="${js_url_bootstrap_datepicker_locale}" charset="UTF-8"><jsp:text/></script>

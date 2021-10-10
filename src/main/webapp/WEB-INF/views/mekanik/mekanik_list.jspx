@@ -16,7 +16,7 @@
 				   data-pagination="true"
 				   data-search="client"
 				   data-page-size="5"
-				   class="table table-striped">
+				   >
 				<thead>
 					<tr>
 						<th data-sortable="true" data-field="idMekanik"><s:message code="mekanik.idMekanik"/></th>

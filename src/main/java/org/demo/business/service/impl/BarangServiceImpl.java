@@ -91,6 +91,19 @@ public class BarangServiceImpl implements BarangService {
 	}
 
 	@Override
+	public void saveJquery(List<Barang> entity) {
+		for (Barang item : entity) {
+			BarangEntity barangFind = barangJpaRepository.findOne(item.getKodeBarang());
+			if( barangFind != null ) {
+				throw new IllegalStateException("Kode barang "+item.getKodeBarang()+" already exist");
+			}
+			BarangEntity barangEntity = new BarangEntity();
+			barangServiceMapper.mapBarangToBarangEntity(item, barangEntity);
+			barangJpaRepository.save(barangEntity);
+		}
+	}
+
+	@Override
 	public Barang update(Barang barang) {
 		BarangEntity barangEntity = barangJpaRepository.findOne(barang.getKodeBarang());
 		barangServiceMapper.mapBarangToBarangEntity(barang, barangEntity);

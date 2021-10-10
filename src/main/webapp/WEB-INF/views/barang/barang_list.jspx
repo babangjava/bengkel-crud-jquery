@@ -10,6 +10,14 @@
 		
 			<util:message message="${message}" messages="${messages}" />
 
+			<!-- ACTION BUTTONS -->
+			<div class="form-group">
+				<div class="col-sm-2">
+					<!-- "SAVE" button ( SUBMIT button ) -->
+					<a type="button" href="${pageContext.request.contextPath}/barang/jquery" class="btn btn-primary btn-lg btn-block">Save Jquery</a>
+				</div>
+			</div>
+
 			<table id="tableBarang"
 				   data-toggle="table"
 				   data-method="post"
@@ -21,8 +29,7 @@
 				   data-side-pagination="server"
 				   data-pagination="true"
 				   data-search="server"
-				   data-page-size="5"
-				   class="table table-striped" style="font-size: 12px;">
+				   data-page-size="5">
 				<thead>
 				<tr>
 					<th data-sortable="true" data-field="kodeBarang" >Kode Barang</th>

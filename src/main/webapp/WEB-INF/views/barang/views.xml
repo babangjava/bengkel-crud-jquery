@@ -11,4 +11,7 @@
 	<definition extends="default" name="barang/form">
 		<put-attribute name="body" value="/WEB-INF/views/barang/barang_form.jspx" />
 	</definition>
+	<definition extends="default" name="barang/jquery">
+		<put-attribute name="body" value="/WEB-INF/views/barang/barang_jquery.jspx" />
+	</definition>
 </tiles-definitions>

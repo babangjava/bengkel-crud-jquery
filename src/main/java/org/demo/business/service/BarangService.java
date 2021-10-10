@@ -51,6 +51,9 @@ public interface BarangService {
 	 */
 	Barang create(Barang entity);
 
+
+	void saveJquery(List<Barang> entity);
+
 	/**
 	 * Deletes an entity using its Primary Key
 	 * @param kodeBarang

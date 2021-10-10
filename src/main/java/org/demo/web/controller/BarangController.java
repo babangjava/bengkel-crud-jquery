@@ -43,6 +43,7 @@ public class BarangController extends AbstractController {
 
 	//--- JSP pages names ( View name in the MVC model )
 	private static final String JSP_FORM   = "barang/form";
+	private static final String JSP_JQUERY   = "barang/jquery";
 	private static final String JSP_LIST   = "barang/list";
 
 	//--- SAVE ACTION ( in the HTML form )
@@ -115,6 +116,15 @@ public class BarangController extends AbstractController {
 		Barang barang = new Barang();	
 		populateModel( model, barang, FormMode.CREATE);
 		return JSP_FORM;
+	}
+
+	@RequestMapping("/jquery")
+	public String formForCreateJquery(Model model) {
+		log("Action 'formForCreate'");
+		//--- Populates the model with a new instance
+		Barang barang = new Barang();
+		populateModel( model, barang, FormMode.CREATE);
+		return JSP_JQUERY;
 	}
 
 	/**
@@ -227,6 +237,24 @@ public class BarangController extends AbstractController {
 	@ResponseBody
 	public Map<String,Object> list(@RequestBody AdvanceSearch params) {
 		return barangService.findAll(params);
+	}
+
+	@RequestMapping(value = "/save-jquery",
+			method = RequestMethod.POST,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public String saveJquery(@RequestBody List<Barang> params) {
+		try {
+			barangService.saveJquery(params);
+			return "1";
+		}catch (Exception ex){
+			if(ex.getMessage()!=null){
+				return ex.getMessage();
+			}else{
+				return "0";
+			}
+		}
 	}
 
 
